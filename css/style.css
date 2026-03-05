@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../img/50345f998c152dfc219c48cec46b3876.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgba(25, 25, 25, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(25, 25, 25, 0.69);
+
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    color: white;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a5298;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #1e3c72;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.balao {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    display: none;
+    font-weight: bold;
+    animation: aparecer 0.3s ease-in-out;
+}
+
+/* Triângulo do balão */
+.balao::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+}
+
+.balao.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.balao.sucesso::after {
+    border-color: transparent transparent #d4edda transparent;
+}
+
+.balao.gasolina {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.balao.gasolina::after {
+    border-color: transparent transparent #cce5ff transparent;
+}
+
+.balao.erro {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.balao.erro::after {
+    border-color: transparent transparent #f8d7da transparent;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
